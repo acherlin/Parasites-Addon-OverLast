@@ -1,0 +1,5 @@
+{
+	"recipes": {
+		"canteen_shapeless": "com.overlast.crafting.ShapelessCanteenRecipe$Factory"
+	}
+}

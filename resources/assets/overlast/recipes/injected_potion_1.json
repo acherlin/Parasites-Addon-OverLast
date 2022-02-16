@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    "%#%",
+    "&@&"
+  ],
+  "key": {
+    "#": {
+      "item": "srparasites:ada_manducater_drop"
+    },
+    "X": {
+      "item": "srparasites:biomepurifier"
+    },
+    "#": {
+      "item": "srparasites:ada_manducater_drop"
+    },
+    "%": {
+      "item": "srparasites:evolutionlure",
+      "data": 2
+    },
+    "@": {
+      "item": "overlast:drinking_potion",
+      "data": 0
+    },
+    "&": {
+      "item": "minecraft:gunpowder"
+    }
+  },
+  "result": {
+    "item": "overlast:injected_potion",
+    "data": 0,
+    "count": 6
+  }
+}

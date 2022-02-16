@@ -1,0 +1,34 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ZA%",
+    "AXA",
+    "#AB"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:coal",
+      "data": 0
+    },
+    "X": {
+      "item": "minecraft:compass"
+    },
+    "Z": {
+      "item": "minecraft:iron_ingot"
+    },
+    "%": {
+      "item": "minecraft:gold_ingot"
+    },
+    "A": {
+      "item": "srparasites:evolutionlure",
+      "data": 3
+    },
+    "B": {
+      "item": "minecraft:diamond",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "overlast:evo_device"
+  }
+}

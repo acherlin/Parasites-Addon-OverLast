@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ZA%",
+    "YXY",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:bowl"
+    },
+    "X": {
+      "item": "minecraft:wheat"
+    },
+    "Y": {
+      "item": "minecraft:wheat_seeds"
+    },
+    "Z": {
+      "item": "srparasites:assimilated_flesh"
+    },
+    "%": {
+      "item": "srparasites:lurecomponent1"
+    },
+    "A": {
+      "item": "minecraft:yellow_flower",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "overlast:pollute_bowl_herbal"
+  }
+}

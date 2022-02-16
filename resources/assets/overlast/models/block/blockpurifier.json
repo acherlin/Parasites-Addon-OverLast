@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "particle": "overlast:blocks/blockpurifier",
+    "down": "overlast:blocks/blockpurifier_side",
+    "up": "overlast:blocks/blockpurifier_top",
+    "east": "overlast:blocks/blockpurifier_side",
+    "west": "overlast:blocks/blockpurifier_side",
+    "north": "overlast:blocks/blockpurifier_side",
+    "south": "overlast:blocks/blockpurifier_side"
+  }
+}

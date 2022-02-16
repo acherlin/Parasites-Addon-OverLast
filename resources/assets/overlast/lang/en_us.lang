@@ -1,0 +1,59 @@
+itemGroup.overlast=Parasites Addon : OverLast
+
+item.overlast.chocolate_smoothie.name=Chocolate Smoothie
+
+item.overlast.ice_spear.name=Ice Spear
+
+enchantment.overlast.srpkiller=Parasites Killer
+
+item.overlast.pollute_bowl_herbal.name=Polluted Herbal
+item.overlast.bowl_herbal.name=Pure Herbal
+
+item.overlast.melon_ice.name=Melon Ice
+item.overlast.ice_sucker.name=Ice Sucker
+item.overlast.dumpling.name=Dumpling
+
+item.overlast.evo_device.name=Node Detector
+
+item.overlast.drinking_potion.name=Empty Potion Bottle
+item.overlast.drinking_potion_1.name=Parasites Purify Potion
+item.overlast.drinking_potion_2.name=Parasites Infect Potion
+item.overlast.drinking_potion_3.name=Advanced Parasites Infect Potion
+
+item.overlast.injected_potion.name=Injections
+
+potion.effect.overlast:parasites_purify=Parasites Purify
+potion.effect.overlast:parasites_infect=Parasites Infect
+potion.effect.overlast:fortunate=Fortunate
+potion.effect.overlast:evil=Evil
+
+mob_effect.overlast:parasites_purify=Parasites Purify
+mob_effect.overlast:parasites_infect=Parasites Infect
+mob_effect.overlast:fortunate=Fortunate
+mob_effect.overlast:evil=Evil
+
+lingering_potion.effect.overlast:parasites_infect=Lingering Potion of Parasites Infect
+lingering_potion.effect.overlast:parasites_purify=Lingering Potion of Parasites Purify
+lingering_potion.effect.overlast:fortunate=Lingering Potion of Fortunate
+lingering_potion.effect.overlast:evil=Lingering Potion of Evil
+
+splash_potion.effect.overlast:parasites_infect=Splash Potion of Parasites Infect
+splash_potion.effect.overlast:parasites_purify=Splash Potion of Parasites Purify
+splash_potion.effect.overlast:fortunate=Splash Potion of Fortunate
+splash_potion.effect.overlast:evil=Splash Potion of Evil
+
+tile.overlast.blockpurifier.name=Block Purifier
+
+
+key.overlast=OverLast Key Bind
+key.switchhud=Switch HUD
+
+message.evopoint.login=The world phase is %d and the natural rate of evolution is %d P per minute.
+message.evopoint.eight=Eight phase...WHY human is still alive?
+
+# Config
+overlast.client=Client
+overlast.client.tooltip=Client-Only Settings
+
+overlast.mechanics=Mechanics
+overlast.mechanics.tooltip=Settings with the main player mechanics

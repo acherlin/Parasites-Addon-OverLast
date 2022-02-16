@@ -1,0 +1,23 @@
+{
+  "type": "overlast:canteen_shapeless",
+  "ingredients": [
+    {
+      "item": "srparasites:evolutionlure",
+      "data": 2
+    },
+    {
+      "item": "srparasites:ada_manducater_drop"
+    },
+    {
+      "item": "srparasites:biomepurifier"
+    },
+    {
+      "item": "overlast:drinking_potion",
+      "data": 0
+    }
+  ],
+  "result": {
+    "item": "overlast:drinking_potion",
+    "data": 1
+  }
+}

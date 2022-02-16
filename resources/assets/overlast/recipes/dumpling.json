@@ -1,0 +1,43 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "YXY",
+    " % "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:wheat"
+    },
+    "X": [
+      {
+        "item": "minecraft:rotten_flesh"
+      },
+      {
+        "item": "minecraft:cooked_beef"
+      },
+      {
+        "item": "minecraft:cooked_chicken"
+      },
+      {
+        "item": "minecraft:cooked_mutton"
+      },
+      {
+        "item": "minecraft:cooked_porkchop"
+      },
+      {
+        "item": "minecraft:cooked_rabbit"
+      }
+    ],
+    "Y": {
+      "item": "minecraft:sugar"
+    },
+    "%": {
+      "item": "minecraft:water_bucket"
+    }
+  },
+  "result": {
+    "item": "overlast:dumpling",
+    "count": 4
+  }
+}
