@@ -1,26 +1,16 @@
 itemGroup.overlast=寄生兽末世扩展
-
 item.overlast.chocolate_smoothie.name=巧克力沙冰
-
 item.overlast.ice_spear.name=冰棍
-enchantment.overlast.srpkiller=寄灵驱散
-
 item.overlast.pollute_bowl_herbal.name=寄源草药
 item.overlast.bowl_herbal.name=净化草药
-
 item.overlast.melon_ice.name=西瓜棒冰
 item.overlast.ice_sucker.name=印度手搓小冰棍
 item.overlast.dumpling.name=饺子
 item.overlast.evo_device.name=节点探测器
-
-key.overlast=末世生存扩展键位设定
-key.switchhud=切换HUD显示状态
-
 item.overlast.drinking_potion.name=空药水瓶
 item.overlast.drinking_potion_1.name=饮用型寄生净化药水
 item.overlast.drinking_potion_2.name=饮用型寄生感染药水
 item.overlast.drinking_potion_3.name=浓缩型寄生感染药水
-
 item.overlast.injected_potion.name=注射型针剂
 
 potion.effect.overlast:parasites_purify=寄群净化
@@ -45,8 +35,16 @@ splash_potion.effect.overlast:evil=喷溅型亡灵化药水
 
 tile.overlast.blockpurifier.name=方块净化器
 
+enchantment.overlast.srpkiller=寄灵驱散
+
 message.evopoint.login=当前世界等级为 %d ，自然演化速度为 %d P每分
 message.evopoint.eight=都八级了，人类种怎么还没BE
+message.evodevice.normal=当前世界无可探测的节点,请继续提高警惕。
+message.evodevice.success=警告，世界出现节点，请务必尽快清除。所有节点坐标为 (x, y, z, age):
+message.evodevice.fail=节点探测器的频道似乎受到了干扰，机器已经过流损坏。
+
+key.overlast=末世生存扩展键位设定
+key.switchhud=切换HUD显示状态
 
 # Config
 overlast.client=客户端
