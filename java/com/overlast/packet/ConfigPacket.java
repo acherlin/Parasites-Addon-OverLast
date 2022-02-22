@@ -16,7 +16,9 @@ public class ConfigPacket implements IMessageHandler<ConfigMessage, IMessage> {
 		if (ctx.side.isClient()) {
 			// Sync server values to client.
 			double naturalEvolutionScale = message.naturalEvolutionScale;
+			boolean showRequestDirtyClock = message.showRequestDirtyClock;
 			OverConfig.MECHANICS.naturalEvolutionScale = naturalEvolutionScale;
+			OverConfig.MECHANICS.showRequestDirtyClock = showRequestDirtyClock;
 			OverLast.logger.info("Synced the client's config values with the server's.");
 		}
 		
@@ -27,22 +29,26 @@ public class ConfigPacket implements IMessageHandler<ConfigMessage, IMessage> {
 		
 		// Variables used in the packet
 		private double naturalEvolutionScale;
+		private boolean showRequestDirtyClock;
 		
 		// Necessary constructor.
 		public ConfigMessage() {}
 		
-		public ConfigMessage(double naturalEvolutionScale) {
+		public ConfigMessage(double naturalEvolutionScale,boolean showRequestDirtyClock) {
 			this.naturalEvolutionScale=naturalEvolutionScale;
+			this.showRequestDirtyClock=showRequestDirtyClock;
 		}
 		
 		@Override
 		public void fromBytes(ByteBuf buf) {
 			this.naturalEvolutionScale = buf.readDouble();
+			this.showRequestDirtyClock = buf.readBoolean();
 		}
 		
 		@Override
 		public void toBytes(ByteBuf buf) {
 			buf.writeDouble(naturalEvolutionScale);
+			buf.writeBoolean(showRequestDirtyClock);
 		}
 	}
 }
