@@ -50,7 +50,7 @@ public class OverConfig {
 			if (player instanceof EntityPlayerMP) {
 				
 				// Send server config values to the client. This will not affect the client's config file; it's temporary stuff.
-				IMessage msg = new ConfigPacket.ConfigMessage(OverConfig.MECHANICS.naturalEvolutionScale);
+				IMessage msg = new ConfigPacket.ConfigMessage(OverConfig.MECHANICS.naturalEvolutionScale,OverConfig.MECHANICS.showRequestDirtyClock);
 				OverPackets.net.sendTo(msg, (EntityPlayerMP) player);
 			}
 		}
