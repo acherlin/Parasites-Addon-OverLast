@@ -1,25 +1,16 @@
 itemGroup.overlast=Parasites Addon : OverLast
-
 item.overlast.chocolate_smoothie.name=Chocolate Smoothie
-
 item.overlast.ice_spear.name=Ice Spear
-
-enchantment.overlast.srpkiller=Parasites Killer
-
 item.overlast.pollute_bowl_herbal.name=Polluted Herbal
 item.overlast.bowl_herbal.name=Pure Herbal
-
 item.overlast.melon_ice.name=Melon Ice
 item.overlast.ice_sucker.name=Ice Sucker
 item.overlast.dumpling.name=Dumpling
-
 item.overlast.evo_device.name=Node Detector
-
 item.overlast.drinking_potion.name=Empty Potion Bottle
 item.overlast.drinking_potion_1.name=Parasites Purify Potion
 item.overlast.drinking_potion_2.name=Parasites Infect Potion
 item.overlast.drinking_potion_3.name=Advanced Parasites Infect Potion
-
 item.overlast.injected_potion.name=Injections
 
 potion.effect.overlast:parasites_purify=Parasites Purify
@@ -44,12 +35,16 @@ splash_potion.effect.overlast:evil=Splash Potion of Evil
 
 tile.overlast.blockpurifier.name=Block Purifier
 
-
-key.overlast=OverLast Key Bind
-key.switchhud=Switch HUD
+enchantment.overlast.srpkiller=Parasites Killer
 
 message.evopoint.login=The world phase is %d and the natural rate of evolution is %d P per minute.
 message.evopoint.eight=Eight phase...WHY human is still alive?
+message.evodevice.normal=The world has't detectable nodes,Please continue to be vigilant.
+message.evodevice.success=Warning, nodes have appeared in the world, please make sure to clear them as soon as possible. All node coordinates are (x, y, z, age):
+message.evodevice.fail=The node detector signal seems to be interfered,but why the machine has been damaged.
+
+key.overlast=OverLast Key Bind
+key.switchhud=Switch HUD
 
 # Config
 overlast.client=Client
