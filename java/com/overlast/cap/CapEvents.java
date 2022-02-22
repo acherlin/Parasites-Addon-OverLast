@@ -1,5 +1,6 @@
 package com.overlast.cap;
 
+import com.dhanantry.scapeandrunparasites.init.SRPItems;
 import com.dhanantry.scapeandrunparasites.init.SRPPotions;
 import com.dhanantry.scapeandrunparasites.util.SRPConfig;
 import com.dhanantry.scapeandrunparasites.world.SRPWorldData;
@@ -7,10 +8,9 @@ import com.overlast.lib.ModMobEffects;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.MobEffects;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.potion.PotionEffect;
-import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.TextComponentTranslation;
-import net.minecraft.util.text.TextComponentTranslationFormatException;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -43,7 +43,7 @@ public class CapEvents {
 
 			// Capabilities
 			// Send data to client for rendering.
-			IMessage msgGui = new HUDRenderPacket.HUDRenderMessage(SRPWorldData.get(player.getEntityWorld()).getEvolutionPhase(),SRPWorldData.get(player.getEntityWorld()).getTotalKills());
+			IMessage msgGui = new HUDRenderPacket.HUDRenderMessage(SRPWorldData.get(player.getEntityWorld()).getEvolutionPhase(),SRPWorldData.get(player.getEntityWorld()).getTotalKills(),false);
 			OverPackets.net.sendTo(msgGui, (EntityPlayerMP) player);
 
 		}
@@ -91,8 +91,7 @@ public class CapEvents {
 
 			// Server-side
             if (!player.world.isRemote) {
-
-                IMessage msgGui = new HUDRenderPacket.HUDRenderMessage(SRPWorldData.get(player.getEntityWorld()).getEvolutionPhase(),SRPWorldData.get(player.getEntityWorld()).getTotalKills());
+                IMessage msgGui = new HUDRenderPacket.HUDRenderMessage(SRPWorldData.get(player.getEntityWorld()).getEvolutionPhase(),SRPWorldData.get(player.getEntityWorld()).getTotalKills(),!OverConfig.MECHANICS.showRequestDirtyClock||(player.getItemStackFromSlot(EntityEquipmentSlot.MAINHAND).getItem() == SRPItems.itemEVClock || player.getItemStackFromSlot(EntityEquipmentSlot.OFFHAND).getItem() == SRPItems.itemEVClock));
                 OverPackets.net.sendTo(msgGui, (EntityPlayerMP) player);
 
 				if(evoTimer<1200) {
@@ -101,6 +100,7 @@ public class CapEvents {
 					SRPWorldData.get(player.getEntityWorld()).setTotalKills((int) (evopoint*OverConfig.MECHANICS.naturalEvolutionScale), true, player.getEntityWorld());
 					evoTimer=0;
 				}
+				
 				if(!(player.getActivePotionEffect(ModMobEffects.PARASITESINFECT)==null)&&player.getActivePotionEffect(ModMobEffects.PARASITESINFECT).getAmplifier() ==0) {
 					if((player.getActivePotionEffect(ModMobEffects.PARASITESPURIFY)==null)) {
 						player.addPotionEffect(new PotionEffect(SRPPotions.COTH_E, 1200, 1, false, false));
