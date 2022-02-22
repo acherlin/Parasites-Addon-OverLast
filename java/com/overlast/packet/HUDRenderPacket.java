@@ -15,8 +15,9 @@ public class HUDRenderPacket implements IMessageHandler<HUDRenderMessage, IMessa
 		if (ctx.side.isClient()) {
 			int phase =  message.phase;
 			int evolution =  message.evolution;
+			boolean showRequestDirtyClock = message.showRequestDirtyClock;
 
-			RenderHUD.retrieveStats(phase, evolution);
+			RenderHUD.retrieveStats(phase, evolution,showRequestDirtyClock);
 		}
 		
 		return null;
@@ -28,26 +29,30 @@ public class HUDRenderPacket implements IMessageHandler<HUDRenderMessage, IMessa
 		//SRP
 		private int phase;
 		private int evolution;
+		private boolean showRequestDirtyClock;
 
 		
 		// Necessary constructor.
 		public HUDRenderMessage() {}
 		
-		public HUDRenderMessage(int phase,int evolution) {
+		public HUDRenderMessage(int phase,int evolution,boolean showRequestDirtyClock) {
 			this.phase=phase;
 			this.evolution = evolution;
+			this.showRequestDirtyClock=showRequestDirtyClock;
 		}
 		
 		@Override
 		public void fromBytes(ByteBuf buf) {
 			this.phase = buf.readInt();
 			this.evolution = buf.readInt();
+			this.showRequestDirtyClock=buf.readBoolean();
 		}
 		
 		@Override
 		public void toBytes(ByteBuf buf) {
 			buf.writeInt(phase);
 			buf.writeInt(evolution);
+			buf.writeBoolean(showRequestDirtyClock);
 		}
 	}
 }
