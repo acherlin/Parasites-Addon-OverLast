@@ -13,8 +13,12 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 public class RenderHUD extends Gui {
 
 
+	//索引值
 	private static int EvoIndex=1;
+	//控制GUI开关
 	public static boolean switchhud = true;
+	public static boolean heldDirtyClock = false;
+
 	public static int SanAdd = 0;
 	// The stat bars themselves.
 	private static final StatBar EVOLUTION_BAR = new StatBar(StatBar.StatType.EVOLUTION, 113, 29, 80, 23, 32, new ResourceLocation(OverLast.MOD_ID, "textures/gui/evolutionbar1.png"));
@@ -23,10 +27,11 @@ public class RenderHUD extends Gui {
 	private static final StatBar[] MAIN_BARS = {EVOLUTION_BAR};
 
 
-	// This method gets the correct stats of the player.  
-	public static void retrieveStats(int phase, int evolution) {
+	// This method gets the correct stats of the player.  这个方法可以得到玩家的正确属性资料，通过服务端传入的数据包
+	public static void retrieveStats(int phase, int evolution,boolean showRequestDirtyClock) {
 		EvoIndex=phase;
 		EVOLUTION_BAR.setValue(evolution);
+		heldDirtyClock=showRequestDirtyClock;
 		switch(phase) {
 			case -2:
 			case -1:EVOLUTION_BAR.setMaxValue(0);break;
@@ -50,17 +55,20 @@ public class RenderHUD extends Gui {
 		if(!switchhud){
 			return;
 		}
+		if(OverConfig.MECHANICS.showRequestDirtyClock&&!heldDirtyClock) {
+			return;
+		}
 		if (event.getType() == RenderGameOverlayEvent.ElementType.TEXT) {
 			
-			// Instance of Minecraft. All of this crap is client-side (well of course)
+			// Instance of Minecraft. All of this crap is client-side (well of course) Minecraft的实例。所有这些废话都是客户端的（当然是好）。
 			Minecraft mc = Minecraft.getMinecraft();
 			
-			// Get current screen resolution. 
+			// Get current screen resolution.  获取当前的屏幕分辨率。
 			ScaledResolution scaled = event.getResolution();
 			int screenWidth = scaled.getScaledWidth();
 			int screenHeight = scaled.getScaledHeight();
 
-			// Variables used to render the bars.
+			// Variables used to render the bars.  用于渲染条形图的变量。
             int x;
             int y;
             int i = 0;
@@ -73,15 +81,16 @@ public class RenderHUD extends Gui {
             int movingWidth;
             String text;
 
-            // The loop that renders the main stat bars.
+            // The loop that renders the main stat bars. 循环渲染主要属性条的。
 			for (StatBar bar : MAIN_BARS) {
 
                 // RIGHTMOST position of this bar. This is so we can account for the bar widths correctly.
+				// 这个条形图的RIGHTMOST位置。这是为了让我们能够正确地考虑到条形的宽度。
                 x = getX(screenWidth, i);
                 y = getY(screenHeight, i);
                 i++;
 
-			    // Should this bar be displayed? 
+			    // Should this bar be displayed? 是否应该显示此栏？
                 if (bar.shouldBeDisplayed()) {
 
                     // Get the stuff
@@ -111,6 +120,10 @@ public class RenderHUD extends Gui {
 
 	// This'll either be right by 0 or right by the rightmost edge of the screen.
 	// So pos doesn't actually matter.
+	// 帮助确定放置状态栏的位置。
+	// 这更像是一个基础位置，并且会根据它的纹理进行修改。
+	// 这要么是在0的右边，要么是在屏幕的最右边的边缘。
+	// 所以位置实际上并不重要。
 	private int getX(int screenWidth, int pos) {
 		
 		// Figure out where the user specified to put the bars (in config)
@@ -134,7 +147,7 @@ public class RenderHUD extends Gui {
 		}
 	}
 	
-	// The stat bars are 20 pixels apart, vertically. 
+	// The stat bars are 20 pixels apart, vertically. 统计条在垂直方向上相隔20像素。
 	private int getY(int screenHeight, int pos) {
 		
 		// Top of the screen
